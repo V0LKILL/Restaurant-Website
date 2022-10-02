@@ -1,1 +1,34 @@
-<p>menu works!</p>
+<p class="menu">Menu</p>
+
+<div class="menu-wrapper">
+
+  <div class="left-info">
+    <img class="categories" src="https://s3-alpha-sig.figma.com/img/2a2c/f833/f5247a759f6614f495a6eaba7f223094?Expires=1665360000&Signature=EqOVqg68zUAB8ORnF5zpKVRESgjVQuz~nlCfCLlySXbj3mLURYW8BwxyzgIZWwnkIx5HfTbRRHPqWEscPfA9u0vJO~NzKiiUiS0dNH4XavIyEpZmgAA1ILLcaFa9Fmr9WbP9YaYOOo-vSShHmTXknEfjb4zj6G8wTx4f1bSSWtgu9wR7xq4z0fFJ6H7kgWT6wKV5YlWjp0uY5T1POZaWOLXz4ua-1Ut3LOijp6rDtEUXcgB59k~ePVTE6GOWgKBSrut50H9BuMlVfAZm3n6hvI4YhK1pmdixTMyc5MGpTkFufo8DWvyueqT352wr6a0u8y4uiBLdmo6VtGyKQxUQPA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+    <img class="categories" src="https://s3-alpha-sig.figma.com/img/052f/4237/739e3922d197b2856c3a06d9f18b0814?Expires=1665360000&Signature=JOX3r64Mh0uvAy3m9yVYLWdqDGVxpfsfwOePoo8n1uMqvAhtAJxy9iKUQK9sh4uIOT-R98XDqAl4y6kyk8PZsy3nArVavh3ibEpdpArYOzisAdtNYlcqbPwG0Jd-WhNMqn9G7TX5XcepuHcmHWSQv34efEfjlXaTT7mvok~2cbLjNIHfGPLhDK3b~M13jXFEuSeyxK4fvCbsjVHwJCcYnWwqdhiPU1QSHL8iSqOLJRqbiJ5-ITLs02Ap5sALFdXLCueKqgIM0GlgTfD-HyriujL3tT0ZaPRSLJZVFthPkO4kV-iFNO0aIfabKl74AENNX4zjFnD-Z8vk51gRxidThA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+    <img class="categories" src="https://s3-alpha-sig.figma.com/img/6e17/596e/edd53e60eca2d03673d83675220ae6c1?Expires=1665360000&Signature=J95Ejcw1A9QVBPoiPrLh-H3nAhy5Qa533MK8H7Wn8-epd3Vi0h6dBntyne2z-vGBpMPmSQbXXBtfKCtDoDuLWrQkfA83PYrOiSOqNZ52XvEZlBianDXPu~XRXKuevMNbS-mKTKae1~~dmVdWgsCl5kVq1z-g87VaKbAeCo0I~NlsOXeyAAuW9ZG~HfYJxhdpfwUPjiwgK97vXDYr6T28goFu1gcAiX6RnzPyM~Ud0D1Yhnli~e2V9yaLJUhdp9BK-bNMZWT9QrETNotraPU0us5TSTGeuV6df59jFOuOQfKpng5F2IA0sPK0HXCnotK3aH2vZkjJfcUkbu0Qq~Mdxg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+    <img class="categories" src="https://s3-alpha-sig.figma.com/img/4b33/f08e/ad5dcdabbf2fd715b1664d14b5d505b6?Expires=1665360000&Signature=MvyKNwBfqUAHqkD8ezkTRKzI6ssI7DUS4VLHTvAyq7zYVTuCaMQZBwDPtUB~CbaXA9DexNbVtsQAcYXog2PW3LtZBfvKFRnlSTl6OMDIi40zsSeV2ZVDQKiJydVky~WwvOHE26bSfGls2EGX5C3wfdzDGUb5DIyKDORGN6edvJHQyC-RhJ8ux5sQ-n5rK-ROqpxxp0p-CVFTG-YyQgUCOa0lT3RVtIIe5w--9Z7oiSnaZsMeA3CO02mG-GS~85W4RfczznXY1UYpb~3TC2Bjlourrbk8tjw-hdq~UP9IDF6yfwbAwXWaEXlRJATVqQXIfKZTjqjMbePC68Mxvw~Fzw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+
+  </div>
+
+  <div class="dish-wrapper">
+    <div class="dish" *ngFor="let dish of data" (click)="changeSelectedDish(dish)">
+      <p class="name">{{dish.name}}</p>
+      <img src={{dish.alt_img}}>
+    </div>
+  </div>
+
+  <div class="right-dish-info" *ngIf="selected">
+    <img src="{{selected.alt_img}}" class="select-img">
+    <div class="select-info">
+      <p class="name-info">{{selected.name}}</p>
+      <p class="calories">{{selected.calories}} calories</p>
+      <p class="max-persons">{{selected.max_person}} person</p>
+      <p class="time">{{selected.time}} minutes</p>
+      <p class="price">{{selected.price}} ₴</p>
+    </div>
+    <img src="https://s3-alpha-sig.figma.com/img/c44c/6720/5d2377ab7cd03a58d00bc6c9299af50a?Expires=1665360000&Signature=B0SZR2uzX-~au4dgkvpxvwHXAUovyDEqW4D5S4LeSQuXYYlZZRpoofBcu-f6beWd~lCRIPJPpEhEbog45Oh6J6hkqcQcAxQjj4oXaKWQCZBadOpVk6~Df4ydOIpbtUZWzFFDi9mPpeT9EJNIhVvcA~iS4K6ywveg8UsKpmeM750kuMBC8lrTHtyej6n6gCO~8dZEZr-mJtWf-mI1ZZyVFEyNcQfHQvfC82GfraPWfmIxlxk-AUhITvw3DoIwEcQ7o4bDEAKcpSOiyec8zAFukt33OIdYTIsHWZrRh9mD4XDMnL0RAC-nkIeIcKbzxNkzww~uMARkv6l73S2Dql9oSA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" class="info-logo">
+  </div>
+
+
+
+</div>

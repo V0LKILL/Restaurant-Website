@@ -1,5 +1,4 @@
 .navigation {
-
   padding: 0 17px 37px 17px;
   display: inline;
 }
@@ -14,6 +13,11 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
+nav a:hover {
+  color: #535353;
+}
+
 
 .links {
   margin-top: 8px;
@@ -32,4 +36,23 @@ nav {
   margin-left: 17px;
   margin-top: 26px;
   position: absolute;
+}
+
+.link-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.active-link {
+  color: #00503D;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.active-link .point {
+  width: 11px;
+  height: 11px;
+  background-color: #00503D;
+  border-radius: 100px;
+  margin: 8px auto;
 }

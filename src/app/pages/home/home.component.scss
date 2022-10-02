@@ -24,11 +24,10 @@ p {
 }
 
 .dishes {
-  padding: 0 60px 0 60px;
+  padding: 0 60px 75px 60px;
   display: flex;
   justify-content: space-between;
   margin-top: -110px;
-  padding-bottom: 75px;
 }
 
 .dish-info {
@@ -43,8 +42,8 @@ p {
   display: block;
   width: 300px;
   height: 300px;
-  margin: 0 auto;
-  margin-top: -120px;
+  margin: -120px auto 0;
+  transform: rotate(140deg)
 }
 
 .name, .calories {
@@ -92,41 +91,3 @@ p {
   text-align: center;
   font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// https://www.figma.com/file/NB9fefEfKwthCwaK4LZ93g/image/977851b9c795edc03f464ce963657f2592c12f9f?fuid=782692714355641334
-
-// https://s3-alpha-sig.figma.com/img/ab26/ed6e/658f411628a9dfe925ca9a31f051273b?Expires=1664755200&Signature=Ye5mwqTnPslFq378K6otOATRHO5VkETntQvBsacphCeYC4nSTzapQUz3S2-P86nv4stJEYtBW5UiuGKOdNkN4wsRPcEvM9RVxKJdvSZsKxdTHhdEUvwG0h7PenWlK1GKUzyalXSWbD-Woxkj1FwSJOBvxe4sWignWl2FqKvwnzmBa9Oe-mHmJGBOjl4mjV3Zd28zu-TGWhlTwnpowYfecR63GDDy0oXEVgfl5KpbisQzWTrVZ4UaUzZfeSORbgi1a1sX2eBeoZUP0aey3GXm5TQsSYSpj9oDbVw94Sc2~sjL~CtQWgNhnsgVsyhU7IyfEyXMe6W05x0NLw31rrzRMQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA
-
-// https://s3-alpha-sig.figma.com/img/b0a2/2ffd/6f7fe5420a614864dd1b18adb6e9d8d5?Expires=1664755200&Signature=KUpNF4jcRt7-ElPKMU4DY2CFPHdAJrzBgH1NtoGSW~BwYTNh~XeMZXdr-IfICTd4VfcrExqWLd1VVxN~Il5QS63GkpDfAQL21qtf0~a2Y5vBwgAwJMoTge9zUoe1PIopb4~qXKcnKWLwX53Vg1bXjQ5fwijlqW2JlX2vOi5jRj7Ml9r-6hhyJy34rhQcHyoP7Q62e1jn93~izHBB3VxNIDngDLPBR03AjQw4i3-X8zuR7bjNsxpRNkxaGz9KOWjgSuoADrrzAJLgcPNNMMukbUq73BCo~Z55Cy6q8zpbOMO2zmNsDTz38GiTh4wqVhIFpQEg5h9RJ~JUDn9x5oCodQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA
