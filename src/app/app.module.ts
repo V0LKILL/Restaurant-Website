@@ -10,6 +10,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import { DishInfoComponent } from './components/dish-info/dish-info.component';
+import { BaseComponent } from './components/base/base.component';
+import { CurrentDishComponent } from './pages/home/current-dish/current-dish.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {CommonModule} from "@angular/common";
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    MenuComponent
+    MenuComponent,
+    DishInfoComponent,
+    BaseComponent,
+    CurrentDishComponent
   ],
   imports: [
     BrowserModule,

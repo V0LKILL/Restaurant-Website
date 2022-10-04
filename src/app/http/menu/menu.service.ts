@@ -14,8 +14,12 @@ export class MenuService {
 
     public get(): Observable<any> {
 
-        return this.http.get(`${environment.url}/assets/json/menu.json`)
+        return this.http.get(`${environment.url}/assets/json/menu.json`);
 
+    }
+
+    public getDishOfDay(): Observable<any> {
+      return this.http.get(`${environment.url}/assets/json/dish-of-day.json`);
     }
 
 }
