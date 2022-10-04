@@ -17,16 +17,8 @@
     </div>
   </div>
 
-  <div class="right-dish-info" *ngIf="selected">
-    <img src="{{selected.alt_img}}" class="select-img">
-    <div class="select-info">
-      <p class="name-info">{{selected.name}}</p>
-      <p class="calories">{{selected.calories}} calories</p>
-      <p class="max-persons">{{selected.max_person}} person</p>
-      <p class="time">{{selected.time}} minutes</p>
-      <p class="price">{{selected.price}} ₴</p>
-    </div>
-    <img src="https://s3-alpha-sig.figma.com/img/c44c/6720/5d2377ab7cd03a58d00bc6c9299af50a?Expires=1665360000&Signature=B0SZR2uzX-~au4dgkvpxvwHXAUovyDEqW4D5S4LeSQuXYYlZZRpoofBcu-f6beWd~lCRIPJPpEhEbog45Oh6J6hkqcQcAxQjj4oXaKWQCZBadOpVk6~Df4ydOIpbtUZWzFFDi9mPpeT9EJNIhVvcA~iS4K6ywveg8UsKpmeM750kuMBC8lrTHtyej6n6gCO~8dZEZr-mJtWf-mI1ZZyVFEyNcQfHQvfC82GfraPWfmIxlxk-AUhITvw3DoIwEcQ7o4bDEAKcpSOiyec8zAFukt33OIdYTIsHWZrRh9mD4XDMnL0RAC-nkIeIcKbzxNkzww~uMARkv6l73S2Dql9oSA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" class="info-logo">
+  <div class="right-dish-info">
+    <app-dish-info></app-dish-info>
   </div>
 
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuService} from "../../http/menu/menu.service";
 import {MenuInterface} from "../../interfaces/menu.interface";
+import {CurrentDishService} from '../../services/current-dish/current-dish.service';
+import {combineLatest, forkJoin, map, zip} from 'rxjs';
 
 
 @Component({
@@ -11,23 +13,36 @@ import {MenuInterface} from "../../interfaces/menu.interface";
 export class HomeComponent implements OnInit {
 
   public data: MenuInterface[] = [];
-  public selected: MenuInterface = null;
+  public selected: MenuInterface;
+  private dishOfDay: number;
 
-  constructor(private menuService: MenuService) { }
+  constructor(protected menuService: MenuService, protected currentDishService: CurrentDishService) { }
 
-  ngOnInit(): void {
-    this.menuService.get().subscribe(
-      (res: {data: MenuInterface[]}) => {
-        // debugger
-      this.data = res.data;
-      this.selected = this.data[0]
-        console.log(this.data[0])
-      }
-    )
+  public ngOnInit(): void {
+    zip(this.getMenu(), this.getDishOfDay())
+      .subscribe(_ =>  {
+        const dishOfDay = this.data.find(item => item.id === this.dishOfDay);
+        this.changeSelectedDish(dishOfDay);
+      });
   }
 
-  changeSelectedDish(dish: MenuInterface) {
-    this.selected = dish
+  public changeSelectedDish(dish: MenuInterface) {
+    this.selected = dish;
+    this.currentDishService.dishSub.next(dish);
+  }
+
+  protected getMenu() {
+    return this.menuService.get()
+      .pipe(
+        map((res: {data: MenuInterface[]}) => this.data = res.data)
+      );
+  }
+
+  protected getDishOfDay() {
+    return this.menuService.getDishOfDay()
+      .pipe(
+        map((res: { data: {id: number}}) => this.dishOfDay = res.data.id)
+      );
   }
 }
 
